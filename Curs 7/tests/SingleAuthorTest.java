@@ -19,7 +19,7 @@ public class SingleAuthorTest extends BaseTest {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("div[class='sc_skills_label']")));
 		
-		// dintr-un motiv sau altul nu a mers sa iau textul din div gu getText() si nu prea imi dau seama de ce: singleAuthorPage.getDramaPercentage().getText()
+		// dintr-un motiv sau altul nu a mers sa iau textul din div cu getText() si nu prea imi dau seama de ce: singleAuthorPage.getDramaPercentage().getText()
 		// am incercat si //*[text()='Drama']/../following-sibling::div[1]/div/div/text() si imi dadea eroare.
 
 		assertEquals(singleAuthorPage.getDramaPercentage().getAttribute("data-stop")+"%", "95%");
