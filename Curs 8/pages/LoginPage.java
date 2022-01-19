@@ -13,6 +13,7 @@ public class LoginPage {
 	public By usernameField = By.id("log");
 	public By passwordField = By.id("password");
 	public By submitButton = By.cssSelector("input[class='submit_button']");
+	public By userName = By.cssSelector("span[class='user_name']");
 	
 	public void setUsername(String username) {
 		driver.findElement(usernameField).sendKeys(username);
@@ -30,6 +31,9 @@ public class LoginPage {
 		setUsername(username);
 		setPassword(password);
 		clickSubmitButton();
+				
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(userName), "Test User"));
 	}
 
 }

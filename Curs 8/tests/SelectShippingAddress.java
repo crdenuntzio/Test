@@ -22,9 +22,6 @@ public class SelectShippingAddress extends BaseTest {
 	public void login(String user, String pass) {
 		LoginPage login = navMenu.navToLogin();
 		login.loginInApp(user, pass);
-		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.cssSelector("span[class='user_name']")), "Test User"));
 	}
 	
 	@Test
